@@ -1,0 +1,23 @@
+=container()
+  display: flex
+  gap: 15px
+  align-items: center
+
+.Cell
+  width: 100%
+  +container
+
+  &__content
+    +container
+
+  &__typography
+    display: flex
+    flex-direction: column
+    justify-content: center
+    overflow: hidden
+
+  &__title, &__text
+    width: 100%
+    white-space: nowrap
+    text-overflow: ellipsis
+    overflow: hidden

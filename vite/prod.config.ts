@@ -42,7 +42,7 @@ const manualChunksKeys = [
 
 export default defineConfig({
   ...defaultConfig,
-  base: "/", // Base public path for the application
+  base: "/techqna", // Base public path for the application
   build: {
     sourcemap: false, // Disable source maps for production builds
     cssCodeSplit: true, // Enable splitting of CSS into separate files

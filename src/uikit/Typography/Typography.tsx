@@ -8,6 +8,8 @@ export interface TypographyProps extends AllHTMLAttributes<HTMLElement> {
   caps?: boolean;
   Component?: ElementType;
   plain?: boolean;
+  opacity?: boolean;
+  center?: boolean;
 }
 
 const Typography = forwardRef(
@@ -18,6 +20,8 @@ const Typography = forwardRef(
       plain = true,
       caps = false,
       className = "",
+      opacity = false,
+      center = false,
       ...restProps
     }: TypographyProps,
     ref,
@@ -27,10 +31,10 @@ const Typography = forwardRef(
       className={cn(
         "Typography",
         `Typography__wrapper--weight-${weight}`,
-        {
-          [`Typography__wrapper--plain`]: plain,
-          [`Typography__wrapper--caps`]: caps,
-        },
+        opacity && "Typography__wrapper--opacity",
+        plain && "Typography__wrapper--plain",
+        caps && "Typography__wrapper--caps",
+        center && "Typography__wrapper--center",
         className,
       )}
       {...restProps}

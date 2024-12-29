@@ -1,3 +1,4 @@
+export { default as Accent, type AccentProps } from "./Accent/Accent";
 export { default as Caption, type CaptionProps } from "./Caption/Caption";
 export { default as Headline, type HeadlineProps } from "./Headline/Headline";
 export {
@@ -11,3 +12,7 @@ export {
 export { default as Text, type TextProps } from "./Text/Text";
 export { default as Title, type TitleProps } from "./Title/Title";
 export { default as Typography, type TypographyProps } from "./Typography";
+export {
+  default as ButtonTypography,
+  type ButtonTypographyProps,
+} from "./ButtonTypography/ButtonTypography";

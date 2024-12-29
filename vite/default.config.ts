@@ -9,8 +9,8 @@ import { InlineConfig } from "vite";
 import core from "@vitejs/plugin-react-swc";
 import svgr from "vite-plugin-svgr";
 import tsPaths from "vite-tsconfig-paths";
-import { compression } from "vite-plugin-compression2";
-import { analyzer } from "vite-bundle-analyzer";
+// import { compression } from "vite-plugin-compression2";
+// import { analyzer } from "vite-bundle-analyzer";
 import { fileURLToPath } from "node:url";
 
 /**
@@ -29,11 +29,11 @@ export const defaultConfig: InlineConfig = {
      * Deletes the original assets after compression.
      * Includes certain types of files for compression.
      */
-    compression({
-      algorithm: "gzip", // Compression algorithm (gzip)
-      deleteOriginalAssets: true, // Delete the original uncompressed assets
-      include: /\.(xml|css|json|js|mjs|svg|yaml|yml|toml)$/, // Files to be compressed
-    }),
+    // compression({
+    //   algorithm: "gzip", // Compression algorithm (gzip)
+    //   deleteOriginalAssets: true, // Delete the original uncompressed assets
+    //   include: /\.(xml|css|json|js|mjs|svg|yaml|yml|toml)$/, // Files to be compressed
+    // }),
 
     /**
      * Plugin to resolve TypeScript path mappings defined in tsconfig.json.
@@ -54,7 +54,7 @@ export const defaultConfig: InlineConfig = {
      * Bundle analyzer plugin for analyzing the build output.
      * Useful for inspecting and optimizing the bundle size.
      */
-    analyzer(),
+    // analyzer(),
   ],
   resolve: {
     alias: {

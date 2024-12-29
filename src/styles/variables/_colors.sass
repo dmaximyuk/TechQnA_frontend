@@ -1,21 +1,96 @@
 :root
-  --accent: #e54c70
-  
-  --background: #F4F4F4
-  --secondary: #ffffff
-  --tertiary: #d1d1d1
-  --primary: #32353e
+  -webkit-tap-highlight-color: transparent
+  -webkit-text-size-adjust: 100%
 
-  --text-primary: #070B28
-  --text-secondary: #838383
-  --text-muted: rgba(209, 209, 209, 60%)
+  --accent: #007AFF
+  --tooltip-background-dark: rgba(0, 0, 0, .85)
+  --white: #FFFFFF
+  --black: #000000
+  --gray: #707579
+  --red: #E53935
+  --green: #31D158
+
+  --background: var(--white)
+  --secondary: #EFEFF4
+  --tertiary: #F4F4F7
+  --quartenary: #F6F6FA
+
+  --section: var(--white)
+  --header: var(--white)
+  
+  --text-color: var(--black)
+  --hint-color: var(--gray)
+  --link-color: var(--accent)
+  --button-color: var(--accent)
+  --card-color: var(--white)
+  
+  --button-text-color: var(--white)
+  --accent-text-color: var(--accent)
+  --section-header-text-color: var(--gray)
+  --subtitle-text-color: var(--gray)
+  --destructive-text-color: var(--red)
+
+  --surface-primary: rgba(255, 255, 255, .95)
+  --surface-dark: rgba(56, 56, 56, .85)
+
+  --skeleton: rgba(255, 255, 255, .03)
+  --divider: rgba(0, 0, 0, .15)
+  --outline: rgba(0, 0, 0, .05)
+  --segmented-control-active-bg: #FFFFFF
+  --secondary-hint-color: #A2ACB0
+  --secondary-fill: rgba(67, 120, 255, .10)
+  --destructive-background: var(--red)
+  --primary-code-highlight: #4378FF
+  --secondary-code-highlight: #B00FB4
+  --tertiary-code-highlight: #3A9F20
+  --plain-background: rgba(0, 0, 0, .04)
+  --plain-foreground: rgba(0, 0, 0, .8)
+  --toast-accent-color: #55A6FF
+
+  @media (min-resolution: 2dppx) 
+    --border--width: .5px
+
+  @supports (padding-top: constant(safe-area-inset-bottom)) 
+    --safe-area-inset-bottom: constant(safe-area-inset-bottom)
+
+  @supports (padding-top: env(safe-area-inset-bottom)) 
+    --safe-area-inset-bottom: env(safe-area-inset-bottom)
+
+  @supports (color: color-mix(in srgb, var(--accent-text-color) 10%, transparent))
+    --secondary-fill: color-mix(in srgb, var(--accent-text-color) 10%, transparent)
+
+    &[data-theme="dark"]
+      --secondary-fill: color-mix(in srgb, var(--accent-text-color) 15%, transparent)
 
   &[data-theme="dark"]
-    --background: #171717
-    --secondary: #262626
-    --tertiary: #353535
+    --accent: #007AFF
+    --gray: #AAAAAA
 
-    --text-primary: #FFFFFF
-    --text-secondary: #B7B7B7
-    --text-muted: rgba(46, 46, 46, 60%)
+    --background: #212121
+    --secondary: #0F0F0F
+    --tertiary: #2A2A2A
+    --quartenary: #2F2F2F
+
+    --text-color: var(--white)
+    --text-primary: var(--white)
+
+    --header: #212121
+    --sectionr: #212121
+
+    --card-color: #242424
+
+    --surface-primary: rgba(23, 23, 23, .95)
+
+    --divider: rgba(255, 255, 255, .05)
+    --outline: rgba(255, 255, 255, .10)
+    --segmented-control-active-bg: #2F2F2F
+    --secondary-hint-color: #78797E
+    --secondary-fill: rgba(41, 144, 255, .15)
+    --green: #32E55E
+    --destructive-background: rgba(255, 35, 35, .02)
+    --primary-code-highlight: #2990FF
+    --secondary-code-highlight: #E937ED
+    --tertiary-code-highlight: #5AE536
+    --plain-background: rgba(255, 255, 255, .08)
+    --plain-foreground: rgba(255, 255, 255, .95)
     

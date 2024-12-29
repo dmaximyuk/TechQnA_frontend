@@ -5,11 +5,10 @@ import { createBrowserRouter, type RouteObject } from "react-router-dom";
 
 import { RouteID } from "@/models";
 
-const basename = "/";
 const pages: RouteObject[] = [
   {
     id: RouteID.App,
-    path: basename,
+    path: "/",
     element: <App />,
     children: [
       {
@@ -22,6 +21,6 @@ const pages: RouteObject[] = [
 ];
 
 const routes = removeUnnecessary(pages);
-const router = createBrowserRouter(routes, { basename });
+const router = createBrowserRouter(routes, { basename: "/techqna" });
 
 export { routes, router, pages };

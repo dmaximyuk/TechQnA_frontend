@@ -1,20 +1,20 @@
 import "./Home.sass";
 
 import { type AllHTMLAttributes, type FC } from "react";
-import { useTranslation } from "react-i18next";
 
-import { LargeTitle } from "@/uikit";
+import { QuestionsNavigation, Questions } from "@/components";
+import { Divider } from "@/uikit";
 
 export interface HomeProps extends Omit<AllHTMLAttributes<HTMLElement>, ""> {}
 
 const Home: FC<HomeProps> = () => {
-  const { t } = useTranslation();
+  const questionId = 1;
 
   return (
     <div className="Home">
-      <div className="Home__wrapper">
-        <LargeTitle>{t("app.name")}</LargeTitle>
-      </div>
+      <Questions questionId={questionId} />
+      <Divider />
+      <QuestionsNavigation questionId={questionId} />
     </div>
   );
 };
