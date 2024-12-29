@@ -67,6 +67,19 @@ export const { reducer, actions } = createSlice({
         localStorage.setItem(questionIdKey, String(state.question));
       }
     },
+    copyCurrentQuestion(state) {
+      if (
+        !state.prepare &&
+        state.question &&
+        state.questionLength &&
+        state.questionLength >= 1 &&
+        state.items[state.question]
+      ) {
+        window.navigator.clipboard.writeText(
+          `${state.items[state.question].title}\n\n${state.items[state.question].text}`,
+        );
+      }
+    },
     clear(state) {
       state.items = initialState.items;
       state.prepare = initialState.prepare;

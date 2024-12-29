@@ -20,13 +20,20 @@ const QuestionsNavigation: FC<QuestionsNavigationProps> = (props) => {
     return d(questionsActions.navigateQuestion("back"));
   };
 
+  const handleCopyQuestion = () => {
+    return d(questionsActions.copyCurrentQuestion());
+  };
+
   return (
     <div className="QuestionsNavigation">
       <Button stretched onClick={handleNextQuestion}>
         <Text>Следующий</Text>
       </Button>
-      <Button stretched mode="gray" onClick={handlePrevQuestion}>
+      <Button stretched mode="bezeled" onClick={handlePrevQuestion}>
         <Text>Предыдущий</Text>
+      </Button>
+      <Button stretched mode="bezeled" onClick={handleCopyQuestion}>
+        <Text>Copy</Text>
       </Button>
     </div>
   );
