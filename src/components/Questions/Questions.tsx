@@ -34,8 +34,10 @@ const Question: FC<QuestionProps> = (props) => {
           <Tag key={`tag-${str}`}>{str.toUpperCase()}</Tag>
         ))}
       </div>
-      <Title center>{getItem()?.title}</Title>
-      <Text center>{getItem()?.text}</Text>
+      <Title className="Questions__text" weight="2">
+        {getItem()?.title}
+      </Title>
+      <Text className="Questions__text">{getItem()?.text}</Text>
     </div>
   );
 };
