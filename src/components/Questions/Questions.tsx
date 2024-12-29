@@ -9,8 +9,6 @@ import { questionsSelector } from "@/store/questions";
 
 interface QuestionProps {}
 
-const fakeTags = ["javascript", "react"];
-
 const Question: FC<QuestionProps> = (props) => {
   const { question, items } = useSelector(questionsSelector);
 
