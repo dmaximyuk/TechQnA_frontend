@@ -18,7 +18,7 @@ const App: FC = () => {
 
   return (
     <>
-      <div>{lp.themeParams}</div>
+      <div>{JSON.stringify(lp.themeParams)}</div>
       <Outlet />
     </>
   );
