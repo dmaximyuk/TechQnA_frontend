@@ -1,13 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import type { RootState } from "@/store/rootReducer";
-import type { QuestionsState, NavigateQuestionPayload } from "./interface";
+import type {
+  QuestionsState,
+  NavigateQuestionPayload,
+  SetPrepareDataPayload,
+} from "./interface";
 
 const questionIdKey = "qId";
 const defaultQuestionId = 1;
 
 const initialState: QuestionsState = {
   prepare: true,
+  questionLength: null,
   question: null,
   items: {},
 };
@@ -17,20 +22,45 @@ export const { reducer, actions } = createSlice({
   initialState,
   reducers: {
     prepare(state) {
-      state.items = {};
-      state.question = parseInt(
+      state.prepare = true;
+    },
+    setPrepareData(state, action: SetPrepareDataPayload) {
+      const qId = parseInt(
         localStorage.getItem(questionIdKey) || String(defaultQuestionId),
       );
+
+      state.items = action.payload;
+      state.questionLength = Object.keys(action.payload).length;
+
+      if (state.questionLength >= qId) {
+        state.question = qId;
+      } else {
+        state.question = 1;
+      }
+
       state.prepare = false;
     },
-    navigateQuestion(state, payload: NavigateQuestionPayload) {
+    navigateQuestion(state, action: NavigateQuestionPayload) {
       if (typeof state.question === "number" && !Number.isNaN(state.question)) {
-        switch (payload.payload) {
+        switch (action.payload) {
           case "next":
-            state.question += 1;
+            if (
+              !!state.questionLength &&
+              state.questionLength > state.question
+            ) {
+              state.question += 1;
+            } else {
+              state.question = 1;
+            }
+
             break;
           case "back":
             state.question -= 1;
+
+            if (state.question < 1) {
+              state.question = state.questionLength;
+            }
+
             break;
         }
 

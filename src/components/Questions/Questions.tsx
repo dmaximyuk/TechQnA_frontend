@@ -12,18 +12,30 @@ interface QuestionProps {}
 const fakeTags = ["javascript", "react"];
 
 const Question: FC<QuestionProps> = (props) => {
-  const { question } = useSelector(questionsSelector);
+  const { question, items } = useSelector(questionsSelector);
+
+  const getItem = () => {
+    if (!!question || Object.keys(items)?.length >= 1) {
+      return items[question as number];
+    }
+
+    return null;
+  };
+
+  if (!getItem()) {
+    return "Error";
+  }
 
   return (
     <div className="Questions">
       <div className="Questions__tags">
         <Tag>{`#${String(question)}`}</Tag>
-        {fakeTags.map((str) => (
+        {getItem()?.tags?.map((str) => (
           <Tag key={`tag-${str}`}>{str.toUpperCase()}</Tag>
         ))}
       </div>
-      <Title center>Question {question}</Title>
-      <Text center>My otvetochka</Text>
+      <Title center>{getItem()?.title}</Title>
+      <Text center>{getItem()?.text}</Text>
     </div>
   );
 };

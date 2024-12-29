@@ -7,9 +7,7 @@ import { Button, Text } from "@/uikit";
 
 import { questionsActions } from "@/store/questions";
 
-interface QuestionsNavigationProps {
-  questionId: number;
-}
+interface QuestionsNavigationProps {}
 
 const QuestionsNavigation: FC<QuestionsNavigationProps> = (props) => {
   const d = useDispatch();

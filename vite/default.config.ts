@@ -21,7 +21,7 @@ import { fileURLToPath } from "node:url";
 export const defaultConfig: InlineConfig = {
   appType: "spa", // Set application type as Single Page Application
   publicDir: "public", // Directory for public assets, typically static files
-  assetsInclude: ["**/*.zlottie"], // Include .tgs files as assets to be processed. More: https://github.com/dmaximyuk/zlottie
+  assetsInclude: ["**/*.zlottie", "**/*.techqna"],
   plugins: [
     // importMainSass(),
     /**

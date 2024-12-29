@@ -12,9 +12,9 @@ const Home: FC<HomeProps> = () => {
 
   return (
     <div className="Home">
-      <Questions questionId={questionId} />
+      <Questions />
       <Divider />
-      <QuestionsNavigation questionId={questionId} />
+      <QuestionsNavigation />
     </div>
   );
 };

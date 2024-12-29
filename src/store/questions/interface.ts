@@ -1,15 +1,17 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 
 interface Item {
+  tags: string[];
   title: string;
   text: string;
-  tags: string[];
 }
 
 export interface QuestionsState {
   prepare: boolean;
+  questionLength: number | null;
   question: number | null;
-  items: Record<number, { ru: Item; en: Item }>;
+  items: Record<number, Item>;
 }
 
 export type NavigateQuestionPayload = PayloadAction<"next" | "back">;
+export type SetPrepareDataPayload = PayloadAction<Record<number, Item>>;

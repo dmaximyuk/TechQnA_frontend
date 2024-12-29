@@ -7,3 +7,8 @@ declare module "*.svg" {
   const src: string;
   export default src;
 }
+
+declare module "*.techqna" {
+  const content: string;
+  export default content;
+}
