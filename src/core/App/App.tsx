@@ -28,13 +28,6 @@ const App: FC = () => {
 
   return (
     <>
-      <div
-        onClick={() =>
-          window.navigator.clipboard.writeText(lp.startParam || "")
-        }
-      >
-        {lp.startParam}
-      </div>
       <Outlet />
     </>
   );
