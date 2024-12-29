@@ -1,7 +1,7 @@
 {
   "name": "template",
   "description": "A simple template for everyone!",
-  "homepage": ".",
+  "homepage": "https://dmaximyuk.github.io/TechQnA_frontend",
   "version": "0.0.0",
   "private": false,
   "type": "module",
@@ -25,7 +25,7 @@
   },
   "scripts": {
     "dev": "vite --host",
-    "build": "tsc && vite build",
+    "build": "rm -rf dist && vite build",
     "preview": "vite preview",
     "deploy": "gh-pages -d ./dist",
     "update-deps": "npx npm-check-updates -u && npm install"
