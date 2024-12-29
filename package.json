@@ -1,7 +1,7 @@
 {
   "name": "template",
   "description": "A simple template for everyone!",
-  "homepage": "https://dmaximyuk.github.io/TechQnA_frontend",
+  "homepage": ".",
   "version": "0.0.0",
   "private": false,
   "type": "module",

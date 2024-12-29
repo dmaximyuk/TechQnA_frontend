@@ -21,6 +21,6 @@ const pages: RouteObject[] = [
 ];
 
 const routes = removeUnnecessary(pages);
-const router = createBrowserRouter(routes, { basename: "/techqna" });
+const router = createBrowserRouter(routes, { basename: "/TechQnA_frontend" });
 
 export { routes, router, pages };
