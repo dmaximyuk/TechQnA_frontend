@@ -5,6 +5,7 @@ import { useLaunchParams } from "@telegram-apps/sdk-react";
 import { Outlet } from "react-router-dom";
 
 import { questionsActions } from "@/store/questions";
+import { getBrightness } from "@/utils";
 
 const App: FC = () => {
   const d = useDispatch();
@@ -14,11 +15,26 @@ const App: FC = () => {
     d(questionsActions.prepare());
   }, []);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const bgColor = lp.themeParams["bgColor"];
+
+    if (bgColor) {
+      document.documentElement.setAttribute(
+        "data-theme",
+        getBrightness(bgColor || "#ffffff"),
+      );
+    }
+  }, []);
 
   return (
     <>
-      <div>{JSON.stringify(lp.themeParams)}</div>
+      <div
+        onClick={() =>
+          window.navigator.clipboard.writeText(lp.startParam || "")
+        }
+      >
+        {lp.startParam}
+      </div>
       <Outlet />
     </>
   );
