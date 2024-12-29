@@ -2,7 +2,7 @@ import "./QuestionsNavigation.sass";
 
 import { type FC } from "react";
 import { useDispatch } from "react-redux";
-import { useLaunchParams } from "@telegram-apps/sdk-react";
+import { useTranslation } from "react-i18next";
 
 import { Button, Text } from "@/uikit";
 
@@ -12,7 +12,7 @@ interface QuestionsNavigationProps {}
 
 const QuestionsNavigation: FC<QuestionsNavigationProps> = (props) => {
   const d = useDispatch();
-  const lp = useLaunchParams();
+  const { t } = useTranslation();
 
   const handleNextQuestion = () => {
     return d(questionsActions.navigateQuestion("next"));
@@ -26,23 +26,16 @@ const QuestionsNavigation: FC<QuestionsNavigationProps> = (props) => {
     return d(questionsActions.copyCurrentQuestion());
   };
 
-  const handleCopyStartParams = () => {
-    return window.navigator.clipboard.writeText(lp.startParam || "Failed get");
-  };
-
   return (
     <div className="QuestionsNavigation">
       <Button stretched onClick={handleNextQuestion}>
-        <Text>Следующий</Text>
+        <Text>{t("questions.pagination.buttons.next")}</Text>
       </Button>
       <Button stretched mode="bezeled" onClick={handlePrevQuestion}>
-        <Text>Предыдущий</Text>
+        <Text>{t("questions.pagination.buttons.prev")}</Text>
       </Button>
       <Button stretched mode="bezeled" onClick={handleCopyQuestion}>
-        <Text>Copy</Text>
-      </Button>
-      <Button stretched mode="bezeled" onClick={handleCopyStartParams}>
-        Start Params
+        <Text>{t("questions.pagination.buttons.copy")}</Text>
       </Button>
     </div>
   );

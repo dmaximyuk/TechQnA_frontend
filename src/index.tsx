@@ -14,9 +14,9 @@ import { router } from "@/routes";
 
 import "@/locale";
 
-init();
+// init();
 
-backButton.mount();
+// backButton.mount();
 
 const root = createRoot(document.getElementById("root")!);
 

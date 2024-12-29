@@ -2,8 +2,11 @@
   padding: 4px 12px
   border-radius: 8px
 
+  &:not(:first-child)
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
   &--default
     background: var(--accent)
     color: var(--white)
-
-  // &__wrapper
